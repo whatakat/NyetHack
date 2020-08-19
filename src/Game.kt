@@ -3,13 +3,27 @@ fun main(args:Array<String>) {
     var healthPoints = 89
     val isBlassed = true
     val isImmortal = false
-    val auraVisible = isBlassed&&healthPoints>50||isImmortal
-    val auraColor = if (auraVisible) "GREEN" else "NONE"
+    val auraColor = auraColor(isBlassed, healthPoints, isImmortal)
 
     val healthStatus = formatHealthStatus(healthPoints, isBlassed)
-    println("(Aura: $auraColor) "+ "(Blessed: ${if (isBlassed) "YES" else "NO"})")
-    println("$name $healthStatus")
+    printPlayerStatus(auraColor, isBlassed, name, healthStatus)
 
+}
+
+private fun printPlayerStatus(
+    auraColor: String,
+    isBlassed: Boolean,
+    name: String,
+    healthStatus: String
+) {
+    println("(Aura: $auraColor) " + "(Blessed: ${if (isBlassed) "YES" else "NO"})")
+    println("$name $healthStatus")
+}
+
+private fun auraColor(isBlassed: Boolean, healthPoints: Int, isImmortal: Boolean): String {
+    val auraVisible = isBlassed && healthPoints > 50 || isImmortal
+    val auraColor = if (auraVisible) "GREEN" else "NONE"
+    return auraColor
 }
 
 private fun formatHealthStatus(healthPoints: Int, isBlassed: Boolean): String {
