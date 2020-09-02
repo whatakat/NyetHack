@@ -3,11 +3,16 @@ import kotlin.math.roundToInt
 const val TAVERN_NAME = "Taernyl's Folly"
 var playerGold = 10
 var playerSilver = 10
-val patronList: List<String> = listOf("Eli", "Mordoc","Sophie")
+val patronList = listOf("Eli", "Mordoc","Sophie")
 
 fun main(args: Array<String>) {
+    if (patronList.contains("Eli")){
+        println("The tavern master says: Eli's in the back playing cards.")
+    } else{
+        println("The tavern master says: Eli isn't here.")
+    }
     placeOrder("shandy,Dragon's Breath,5.91")
-    println(patronList)
+
 }
 fun performPurchase(price: Double){
     displayBalance()
