@@ -17,8 +17,8 @@ fun main(args: Array<String>) {
         println("The tavern master says: Nay, they departed hour ago.")
     }
     placeOrder("shandy,Dragon's Breath,5.91")
-    for (patron in patronList){
-        println("Good evening, $patron")
+    patronList.forEach { patron->
+        println("good evening, $patron")
     }
 
 }
