@@ -17,10 +17,9 @@ fun main(args: Array<String>) {
         println("The tavern master says: Nay, they departed hour ago.")
     }
     placeOrder("shandy,Dragon's Breath,5.91")
-    println(patronList)
-    patronList.remove("Eli")
-    patronList.add("Alex")
-    println(patronList)
+    for (patron in patronList){
+        println("Good evening, $patron")
+    }
 
 }
 fun performPurchase(price: Double){
