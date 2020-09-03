@@ -3,7 +3,7 @@ import kotlin.math.roundToInt
 const val TAVERN_NAME = "Taernyl's Folly"
 var playerGold = 10
 var playerSilver = 10
-val patronList = listOf("Eli", "Mordoc","Sophie")
+val patronList = mutableListOf("Eli", "Mordoc","Sophie")
 
 fun main(args: Array<String>) {
     if (patronList.contains("Eli")){
@@ -17,6 +17,10 @@ fun main(args: Array<String>) {
         println("The tavern master says: Nay, they departed hour ago.")
     }
     placeOrder("shandy,Dragon's Breath,5.91")
+    println(patronList)
+    patronList.remove("Eli")
+    patronList.add("Alex")
+    println(patronList)
 
 }
 fun performPurchase(price: Double){
