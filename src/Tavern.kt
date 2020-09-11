@@ -34,14 +34,14 @@ fun main(args: Array<String>) {
         placeOrder(uniquePatrons.shuffled().first(), menuList.shuffled().first())
         orderCount++
     }
-    var isTavernOpen = true
-    val isClosingTime = false
-    while (isTavernOpen == true){
-        if (isClosingTime){
-            break
-        }
-        println("Having a grand old time!")
-    }
+//    var isTavernOpen = true
+//    val isClosingTime = false
+//    while (isTavernOpen){
+//        if (isClosingTime){
+//            break
+//        }
+//        println("Having a grand old time!")
+//    }
 }
 fun performPurchase(price: Double){
     displayBalance()
