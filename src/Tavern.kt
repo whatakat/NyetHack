@@ -8,7 +8,7 @@ val patronList = mutableListOf("Eli", "Mordoc","Sophie")
 val lastName = listOf("Ironfoot","Fernsworth","Baggins")
 val uniquePatrons = mutableSetOf<String>()
 val menuList = File("data/tavern-menu-items.txt").readText().split("\n")
-val patronGold = mapOf("Eli" to 10.5, "Mordoc" to 8.0, "Sophie" to 5.5)
+val patronGold = mutableMapOf<String, Double>()
 
 fun main(args: Array<String>) {
     if (patronList.contains("Eli")){
@@ -29,25 +29,15 @@ fun main(args: Array<String>) {
         val name ="$first $last"
         uniquePatrons +=name
     }
-    println(uniquePatrons)
+    uniquePatrons.forEach {
+        patronGold[it] = 6.0
+    }
     var orderCount = 0
     while (orderCount<=9){
         placeOrder(uniquePatrons.shuffled().first(), menuList.shuffled().first())
         orderCount++
     }
-    println(patronGold)
-    println(patronGold["Eli"])
-    println(patronGold["Mordoc"])
-    println(patronGold["Sophie"])
 
-//    var isTavernOpen = true
-//    val isClosingTime = false
-//    while (isTavernOpen){
-//        if (isClosingTime){
-//            break
-//        }
-//        println("Having a grand old time!")
-//    }
 }
 fun performPurchase(price: Double){
     displayBalance()
