@@ -36,6 +36,10 @@ fun main(args: Array<String>) {
         orderCount++
     }
     println(patronGold)
+    println(patronGold["Eli"])
+    println(patronGold["Mordoc"])
+    println(patronGold["Sophie"])
+
 //    var isTavernOpen = true
 //    val isClosingTime = false
 //    while (isTavernOpen){
