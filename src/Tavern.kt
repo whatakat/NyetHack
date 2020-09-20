@@ -36,9 +36,14 @@ fun main(args: Array<String>) {
         placeOrder(uniquePatrons.shuffled().first(), menuList.shuffled().first())
         orderCount++
     }
-
+    displayPatronBalances()
 }
-fun performePurchase(price: Double, patronName: String){
+private fun displayPatronBalances(){
+    patronGold.forEach{patron, balance ->
+        println("$patron, balance: ${"%.2f".format(balance)}")
+    }
+}
+fun performPurchase(price: Double, patronName: String){
     val totalPurse = patronGold.getValue(patronName)
     patronGold[patronName] = totalPurse - price
 }
@@ -62,7 +67,7 @@ private fun placeOrder(patronName: String, menuData: String){
     val message = "$patronName buys a $name ($type) for $price"
     println(message)
 
-   // performPurchase(price.toDouble())
+    performPurchase(price.toDouble(),patronName)
 
     val phrase = if (name =="Dragon's Breath"){
         "$patronName exclaims ${toDragonSpeak("Ah, delicious $name!")}"
