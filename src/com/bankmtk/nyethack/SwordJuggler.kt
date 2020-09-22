@@ -1,3 +1,5 @@
+package com.bankmtk.nyethack
+
 import java.lang.IllegalStateException
 
 fun main(args: Array<String>) {
@@ -17,8 +19,8 @@ fun main(args: Array<String>) {
 
 }
 fun proficiencyCheck(swordsJuggling: Int?){
-    //swordsJuggling ?: throw UnskilledSwordJugglerException()
-    checkNotNull(swordsJuggling, {"Player cannot juggle swords"})
+    //swordsJuggling ?: throw com.bankmtk.nyethack.UnskilledSwordJugglerException()
+    checkNotNull(swordsJuggling, {"com.bankmtk.nyethack.Player cannot juggle swords"})
 }
 class UnskilledSwordJugglerException():
-        IllegalStateException("Player cannot juggle swords")
+        IllegalStateException("com.bankmtk.nyethack.Player cannot juggle swords")

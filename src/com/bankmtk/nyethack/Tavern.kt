@@ -1,5 +1,6 @@
+package com.bankmtk.nyethack
+
 import java.io.File
-import kotlin.math.roundToInt
 
 const val TAVERN_NAME = "Taernyl's Folly"
 
@@ -20,7 +21,7 @@ fun main(args: Array<String>) {
     }else{
         println("The tavern master says: Nay, they departed hour ago.")
     }
-    //placeOrder("shandy,Dragon's Breath,5.91")
+    //com.bankmtk.nyethack.placeOrder("shandy,Dragon's Breath,5.91")
 
     (0..9).forEach {
         val first = patronList.shuffled().first()
@@ -33,13 +34,16 @@ fun main(args: Array<String>) {
     }
     var orderCount = 0
     while (orderCount<=9){
-        placeOrder(uniquePatrons.shuffled().first(), menuList.shuffled().first())
+        placeOrder(
+            uniquePatrons.shuffled().first(),
+            menuList.shuffled().first()
+        )
         orderCount++
     }
     displayPatronBalances()
 }
 private fun displayPatronBalances(){
-    patronGold.forEach{patron, balance ->
+    patronGold.forEach{ patron, balance ->
         println("$patron, balance: ${"%.2f".format(balance)}")
     }
 }
@@ -67,7 +71,7 @@ private fun placeOrder(patronName: String, menuData: String){
     val message = "$patronName buys a $name ($type) for $price"
     println(message)
 
-    performPurchase(price.toDouble(),patronName)
+    performPurchase(price.toDouble(), patronName)
 
     val phrase = if (name =="Dragon's Breath"){
         "$patronName exclaims ${toDragonSpeak("Ah, delicious $name!")}"

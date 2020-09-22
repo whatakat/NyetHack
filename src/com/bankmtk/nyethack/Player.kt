@@ -1,3 +1,5 @@
+package com.bankmtk.nyethack
+
 class Player{
     var name = "madrigal"
     get() = field.capitalize()

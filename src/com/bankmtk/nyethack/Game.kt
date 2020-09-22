@@ -1,3 +1,5 @@
+package com.bankmtk.nyethack
+
 fun main(args:Array<String>) {
     val player = Player()
     player.castFireball()
