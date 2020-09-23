@@ -1,17 +1,15 @@
 package com.bankmtk.nyethack
 
 class Player(_name: String,
-_healthPoints: Int,
-_isBlassed: Boolean,
-_isImmortal: Boolean){
+var healthPoints: Int,
+var isBlassed: Boolean,
+private val isImmortal: Boolean){
     var name = _name
     get() = field.capitalize()
     set(value) {
         field = value.trim()
     }
-    var healthPoints = _healthPoints
-    val isBlassed = _isBlassed
-   private val isImmortal = _isImmortal
+
 
      fun auraColor(): String {
         val auraVisible = isBlassed && healthPoints > 50 || isImmortal
