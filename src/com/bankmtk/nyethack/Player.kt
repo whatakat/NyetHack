@@ -1,7 +1,7 @@
 package com.bankmtk.nyethack
 
 class Player(_name: String,
-var healthPoints: Int,
+var healthPoints: Int=100,
 var isBlassed: Boolean,
 private val isImmortal: Boolean){
     var name = _name
@@ -9,7 +9,11 @@ private val isImmortal: Boolean){
     set(value) {
         field = value.trim()
     }
-    constructor(name: String):this(name,healthPoints = 100,isBlassed = true,isImmortal = false){
+    init {
+        require(healthPoints>0, {"healthPoints must be greater than zero."})
+        require(name.isNotBlank(),{"Player must have a name."})
+    }
+    constructor(name: String):this(name,isBlassed = true,isImmortal = false){
         if (name.toLowerCase() == "kar") healthPoints = 40
     }
 
