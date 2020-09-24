@@ -9,7 +9,9 @@ private val isImmortal: Boolean){
     set(value) {
         field = value.trim()
     }
-    constructor(name: String):this(name,healthPoints = 100,isBlassed = true,isImmortal = false)
+    constructor(name: String):this(name,healthPoints = 100,isBlassed = true,isImmortal = false){
+        if (name.toLowerCase() == "kar") healthPoints = 40
+    }
 
 
      fun auraColor(): String {
