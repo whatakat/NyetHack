@@ -1,5 +1,7 @@
 package com.bankmtk.nyethack
 
+import java.io.File
+
 class Player(_name: String,
 var healthPoints: Int=100,
 var isBlassed: Boolean,
@@ -9,6 +11,12 @@ private val isImmortal: Boolean){
     set(value) {
         field = value.trim()
     }
+    val hometown: String = selectHomeTown()
+    private fun selectHomeTown() = File("data/towns.txt")
+        .readText()
+        .split("\n")
+        .shuffled()
+        .first()
     init {
         require(healthPoints>0, {"healthPoints must be greater than zero."})
         require(name.isNotBlank(),{"Player must have a name."})
