@@ -7,7 +7,7 @@ var healthPoints: Int=100,
 var isBlassed: Boolean,
 private val isImmortal: Boolean){
     var name = _name
-    get() = "${field.toLowerCase().capitalize()} of $hometown"
+    get() = "${field.capitalize()} of $hometown"
     set(value) {
         field = value.trim()
     }
@@ -19,7 +19,7 @@ private val isImmortal: Boolean){
         .first()
     init {
         require(healthPoints>0, {"healthPoints must be greater than zero."})
-        require(name.isNotBlank(),{"Player must have a name."})
+        //require(name.isNotBlank(),{"Player must have a name."})
     }
     constructor(name: String):this(name,isBlassed = true,isImmortal = false){
         if (name.toLowerCase() == "kar") healthPoints = 40

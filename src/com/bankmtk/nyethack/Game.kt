@@ -1,10 +1,10 @@
 package com.bankmtk.nyethack
 
 fun main(args:Array<String>) {
-    val player = Player("Kar")
+    val player = Player("Karish")
     player.castFireball()
 
-    var currentRoom = Room("Foyer")
+    var currentRoom = TownSquare()
     println(currentRoom.descroption())
     println(currentRoom.load())
 
