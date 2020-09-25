@@ -1,9 +1,12 @@
 package com.bankmtk.nyethack
 
 fun main(args:Array<String>) {
-    val player = Player("Madrigal")
+    val player = Player("Kar")
     player.castFireball()
-    val auraColor = player.auraColor()
+
+    var currentRoom = Room("Foyer")
+    println(currentRoom.descroption())
+    println(currentRoom.load())
 
     printPlayerStatus(player)
 
