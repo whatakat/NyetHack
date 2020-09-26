@@ -18,7 +18,11 @@ private fun printPlayerStatus(player: Player){
     println("(Aura: ${player.auraColor()}) " + "(Blessed: ${if (player.isBlassed) "YES" else "NO"})")
     println("${player.name} ${player.formatHealthStatus()}")
 }
-
+object Game{
+    init {
+        println("Welcome, adventurer.")
+    }
+}
 
 
 
