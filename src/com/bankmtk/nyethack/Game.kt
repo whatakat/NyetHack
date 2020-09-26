@@ -5,7 +5,7 @@ fun main(args:Array<String>) {
 }
 
 object Game{
-    val player = Player("madrigal")
+    val player = Player("Madrigal")
     var currentRoom = TownSquare()
     init {
         println("Welcome, adventurer.")
