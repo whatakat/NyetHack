@@ -7,7 +7,7 @@ var healthPoints: Int=100,
 var isBlassed: Boolean,
 private val isImmortal: Boolean){
     var name = _name
-    get() = "$field of $hometown"
+    get() = "${field.capitalize()} of $hometown"
     set(value) {
         field = value.trim()
     }
