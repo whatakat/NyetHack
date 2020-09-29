@@ -12,6 +12,7 @@ private val isImmortal: Boolean){
         field = value.trim()
     }
     val hometown by lazy { selectHomeTown() }
+    var currentPosition = Coordinate(0,0)
     private fun selectHomeTown() = File("data/towns.txt")
         .readText()
         .split("\n")
