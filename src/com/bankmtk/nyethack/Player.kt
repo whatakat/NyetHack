@@ -11,7 +11,7 @@ private val isImmortal: Boolean){
     set(value) {
         field = value.trim()
     }
-    val hometown: String = selectHomeTown()
+    val hometown by lazy { selectHomeTown() }
     private fun selectHomeTown() = File("data/towns.txt")
         .readText()
         .split("\n")
