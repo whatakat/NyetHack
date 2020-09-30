@@ -6,7 +6,12 @@ fun main(args:Array<String>) {
 
 object Game{
     val player = Player("Madrigal")
-    var currentRoom = TownSquare()
+    var currentRoom: Room = TownSquare()
+
+    private var worldMap = listOf(
+        listOf(currentRoom, Room("Tavern"), Room("Back Room")),
+        listOf(Room("Long Corridor"), Room("Generic Room"))
+    )
     init {
         println("Welcome, adventurer.")
         player.castFireball()
