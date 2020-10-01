@@ -3,9 +3,9 @@ package com.bankmtk.nyethack
 import java.io.File
 
 class Player(_name: String,
-var healthPoints: Int=100,
+override var healthPoints: Int=100,
 var isBlassed: Boolean,
-private val isImmortal: Boolean){
+private var isImmortal: Boolean):Fightable{
     var name = _name
     get() = "${field.capitalize()} of $hometown"
     set(value) {
@@ -45,4 +45,18 @@ private val isImmortal: Boolean){
     }
     fun castFireball(numFireballs: Int = 2) =
         println("A glass of Fireball springs into existence. (x$numFireballs)")
+
+    override val diceCount: Int = 3
+
+    override val diceSides: Int = 6
+
+    override fun attack(opponent: Fightable): Int {
+        val damageDealt = if (isBlassed){
+            damageRoll*2
+        }else {
+            damageRoll
+        }
+        opponent.healthPoints -=damageDealt
+        return damageDealt
+    }
 }
