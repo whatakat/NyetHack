@@ -39,6 +39,7 @@ object Game{
         val argument = input.split(" ").getOrElse(1,{ "" })
 
         fun processCommand() = when (command.toLowerCase()){
+            "fight" -> fight()
             "move" -> move(argument)
             else -> commandNotFound()
         }
@@ -62,6 +63,7 @@ object Game{
         }
     private fun fight() = currentRoom.monster?.let {
         while (player.healthPoints> 0 && it.healthPoints>0){
+            slay(it)
             Thread.sleep(1000)
         }
         "Combat complete."
