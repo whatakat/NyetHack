@@ -1,5 +1,6 @@
 package com.bankmtk.nyethack
 
+import com.bankmtk.nyethack.extensions.random
 import java.io.File
 
 const val TAVERN_NAME = "Taernyl's Folly"
@@ -10,7 +11,6 @@ val uniquePatrons = mutableSetOf<String>()
 val menuList = File("data/tavern-menu-items.txt").readText().split("\n")
 val patronGold = mutableMapOf<String, Double>()
 
-private fun <T> Iterable<T>.random():T = this.shuffled().first()
 
 fun main(args: Array<String>) {
     if (patronList.contains("Eli")){

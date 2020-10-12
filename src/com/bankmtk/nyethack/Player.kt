@@ -1,5 +1,6 @@
 package com.bankmtk.nyethack
 
+import com.bankmtk.nyethack.extensions.random
 import java.io.File
 
 class Player(_name: String,
@@ -16,8 +17,7 @@ private var isImmortal: Boolean):Fightable{
     private fun selectHomeTown() = File("data/towns.txt")
         .readText()
         .split("\n")
-        .shuffled()
-        .first()
+        .random()
     init {
         require(healthPoints>0, {"healthPoints must be greater than zero."})
         require(name.isNotBlank(),{"Player must have a name."})
