@@ -1,6 +1,6 @@
 package com.bankmtk.nyethack
 
-import com.bankmtk.nyethack.extensions.random
+import com.bankmtk.nyethack.extensions.random as randomizer
 import java.io.File
 
 const val TAVERN_NAME = "Taernyl's Folly"
@@ -26,8 +26,8 @@ fun main(args: Array<String>) {
     //com.bankmtk.nyethack.placeOrder("shandy,Dragon's Breath,5.91")
 
     (0..9).forEach {
-        val first = patronList.random()
-        val last = lastName.random()
+        val first = patronList.randomizer()
+        val last = lastName.randomizer()
         val name ="$first $last"
         uniquePatrons +=name
     }
@@ -37,8 +37,8 @@ fun main(args: Array<String>) {
     var orderCount = 0
     while (orderCount<=9){
         placeOrder(
-            uniquePatrons.random(),
-            menuList.random()
+            uniquePatrons.randomizer(),
+            menuList.randomizer()
         )
         orderCount++
     }
