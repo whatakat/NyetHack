@@ -14,3 +14,8 @@ class TownSquare : Room("Town Square"){
     final override fun load() = "The villagers rally and cheer as you enter!\n${ringBell()}"
     private fun ringBell() = "The bell tower announces your arrival. $bellSound"
 }
+fun Room.configurePitGoblin(block: Room.(Goblin)->Goblin): Room{
+    val goblin = block(Goblin("Pit Goblin", description = "An Evil Pit Goblin"))
+    monster = goblin
+    return this
+}
